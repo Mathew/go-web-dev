@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Working with Maps in Templates</title>
+</head>
+<body>
+
+<ul>
+    {{range .}}
+        <li>{{.}}</li>
+    {{end}}
+</ul>
+
+
+<!-- Go templating uses $ for variable assignment in templates -->
+<ul>
+    {{range $key, $value:= .}}
+        <li>{{$key}} - {{$value}}</li>
+    {{end}}
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Working with Slices in Templates</title>
+</head>
+<body>
+
+<ul>
+    {{range .}}
+        <li>{{.}}</li>
+    {{end}}
+</ul>
+
+
+<!-- Go templating uses $ for variable assignment in templates -->
+<ul>
+    {{range $index, $element := .}}
+        <li>{{$index}} - {{$element}}</li>
+    {{end}}
+</ul>
+
+
+</body>
+</html>
