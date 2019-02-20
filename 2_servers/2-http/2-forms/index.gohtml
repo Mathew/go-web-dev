@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+</head>
+<body>
+
+<header>
+    <p>The request method: {{ .Method }}</p>
+    <p>The request host: {{ .Host }}</p>
+    <p>The request ContentLength: {{ .ContentLength }}</p>
+</header>
+
+<p>The request URL: {{ .URL }}</p>
+
+
+{{ if .Submissions }}
+
+    <ul>
+        {{ range $key, $value := .Submissions }}
+            <li>{{ $key }} => {{ $value }}</li>
+        {{ end }}
+    </ul>
+
+
+{{ end }}
+
+
+{{ if .Header }}
+    <ul>
+        {{ range $key, $value := .Header }}
+            <li>{{ $key }}: {{ $value }}</li>
+        {{ end }}
+    </ul>
+{{ end }}
+
+
+<form action="/" method="POST">
+    <input type="text" name="fname">
+    <input type="submit" name="submit-btn" value="Submit">
+</form>
+
+
+</body>
+</html>
